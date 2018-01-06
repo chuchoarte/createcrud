@@ -9,5 +9,5 @@ Agregue el Proveedor de servicios en `config/app.php` en la sección `provider`
 jespitia\createcrud\CreateCRUDServiceProvider::class,
 ```
 
-## Uso:
+## Uso
 Vaya a http://myapp.test/artisan-commands
