@@ -1,0 +1,30 @@
+{
+    "name": "jespitia/createcrud",
+    "description": "create CRUD",
+    "license": "GPL",
+    "keywords": ["crud","laravel 5"],
+    "homepage": "https://github.com/chuchoarte/createcrud",
+    "authors": [
+        {
+            "name": "Jesus espitia",
+            "email": "surjesus.sistemas@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "jespitia\\createcrud\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "jespitia\\createcrud\\Tests\\": "tests"
+        }
+    }
+}
