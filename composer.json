@@ -26,5 +26,6 @@
         "psr-4": {
             "jespitia\\createcrud\\Tests\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
