@@ -1,8 +1,8 @@
 {
     "name": "jespitia/createcrud",
     "description": "create CRUD",
-    "license": "GPL",
-    "keywords": ["crud","laravel 5"],
+    "license": "MIT",
+    "keywords": ["crud", "laravel 5"],
     "homepage": "https://github.com/chuchoarte/createcrud",
     "authors": [
         {
