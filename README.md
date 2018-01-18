@@ -4,7 +4,7 @@ Este paquete le permite construir un CRUD de manera semi-automatica, permitiendo
 
 ## Cómo instalar
 Instalar ejecutando el comando composer: `composer require jespitia/createcrud @dev`
-Agregue el Proveedor de servicios en `config/app.php` en la sección `provider`
+agregue el Proveedor de servicios en `config/app.php` en la sección `provider`
 ```php
 jespitia\createcrud\CreateCRUDServiceProvider::class,
 ```
