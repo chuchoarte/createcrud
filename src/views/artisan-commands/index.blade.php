@@ -20,7 +20,7 @@
                 </div>
                 <div class="box-footer">
                     <div class="col-lg-12">
-                        {!! Form::button('<i class="fa fa-save"></i> Recibir', ['class' => 'btn btn-success', 'type' => 'submit']) !!}
+                        {!! Form::button('<i class="fa fa-save"></i> Ejecutar', ['class' => 'btn btn-success', 'type' => 'submit']) !!}
                     </div>
                 </div>
                 {!! Form::close() !!}
