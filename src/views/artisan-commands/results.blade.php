@@ -21,12 +21,8 @@
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:model '.ucfirst($singular_module_name).' -m'}}
-                    </div>
-                    <br>
-                    <div class="col-lg-12">
-                        {{'php artisan make:controller '.ucfirst($singular_module_name).'Controller --resource'}}
-                    </div>
+                        {{'php artisan make:model '.ucfirst($singular_module_name).' --all'}}
+                    </div>                                       
                     <br>
                     <div class="col-lg-12">
                         {{'php artisan make:request '.ucfirst($singular_module_name).'CreateRequest'}}
@@ -38,7 +34,7 @@
                     <br>
                 </div>
                 <div class="box-footer">
-
+                    <button type="button" class="btn btn-default"><i class="fa fa-commands"></i> Ejecutar</button>
                 </div>
             </div>
             <div class="box box-success">
@@ -55,7 +51,7 @@
                     </div>
                 </div>
                 <div class="box-footer">
-
+                    <button type="button" class="btn btn-default"><i class="fa fa-commands"></i> Ejecutar</button>
                 </div>
             </div>
         </div>
