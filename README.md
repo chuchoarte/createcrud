@@ -37,7 +37,7 @@ Puedes copiar y pegar en el terminal (CMD) o simplemente hacer clic en el botón
 
 `php artisan vendor:publish --provider='jespitia\createcrud\CreateCRUDServiceProvider'`
 
-Acto seguido agregar a `app\Routing\AppResourceRegistrar.php` en la secctión 
+Acto seguido agregar a `app\Routing\AppResourceRegistrar.php` en el método `public function boot()`
 ```
 public function boot()
 {
