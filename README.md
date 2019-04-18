@@ -1,5 +1,5 @@
 # CreateCRUD
-Este paquete es de uso personal, usado para mis CRUD básicos en Laravel. Permite construir el esqueleto de un CRUD de manera muy sencilla `[ruta para el método datatable, la ruta resource, vista resource, modelos, migraciones, Factory y requests de validación]`, permitiendo normalizar de una manera más sencilla todos los CRUD del proyecto en Laravel 5.x.
+Este paquete es de uso personal, para mis CRUD básicos en Laravel. Permite construir el esqueleto de un CRUD de manera muy sencilla `[ruta para el método datatable, la ruta resource, vista resource, modelos, migraciones, Factory y requests de validación]`, permitiendo normalizar de una manera más sencilla todos los CRUD del proyecto en Laravel 5.x.
 
 ## Cómo instalar en Laravel 5.x:
 Ejecutar el comando composer: `composer require jespitia/createcrud @dev`
