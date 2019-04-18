@@ -36,3 +36,15 @@ Puedes copiar y pegar en el terminal (CMD) o simplemente hacer clic en el botón
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-3.PNG)
 
 `php artisan vendor:publish --provider='jespitia\createcrud\CreateCRUDServiceProvider'`
+
+Acto seguido agregar a `app\Routing\AppResourceRegistrar.php` en la secctión 
+```
+public function boot()
+{
+     //...
+     $registrar = new App\Routing\AppResourceRegistrar($this->app['router']);
+         $this->app->bind('Illuminate\Routing\ResourceRegistrar', function () use ($registrar) {
+         return $registrar;
+     });
+}
+````
