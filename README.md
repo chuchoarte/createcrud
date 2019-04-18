@@ -22,4 +22,4 @@ Vaya a la url del proyecto `http://myapp.test/artisan-commands`
 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-2.PNG)
 
-Puedes copiar y pegar en tu terminal o simplemente hacer clic en el botón ejecutar. `(Solo aplica para comandos Artisan)`
+Puedes copiar y pegar en tu terminal o simplemente hacer clic en el botón ejecutar. `(El botón "Ejecutar" solo aplica para comandos Artisan)`
