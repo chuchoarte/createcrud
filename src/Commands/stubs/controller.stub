@@ -1,0 +1,150 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\ModelName;
+use Yajra\DataTables\DataTables;
+use App\Repositories\PeugeotRepo;
+use App\Http\Requests\ModelNameCreateRequest;
+use App\Http\Requests\ModelNameEditRequest;
+use DummyRootNamespaceHttp\Controllers\Controller;
+
+class DummyClass extends Controller
+{
+
+     protected $title = 'TitleName';
+     protected $route = 'RouteName';
+     protected $controller = __CLASS__;
+     protected $model;
+     private $repo;
+
+     public function __construct(PeugeotRepo $repo, ModelName $model)
+     {
+        $this->repo = $repo;
+        $this->model = $model;
+     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view($this->route.'.'.__FUNCTION__, [
+            'title' => $this->title
+        ]);
+    }
+
+    /**
+    * @return array
+    * @throws \Exception
+    */
+    public function datatable()
+        {
+            if (count($this->model->all()) <= 0)
+            {
+                return [];
+            }else{}
+            $route = $this->routeT;
+            foreach ($this->model->all() as $item) {
+                $data[] = [
+                    'prefix_route' => $route,
+                    //Fill with elements
+                    'id'                => $item->id,
+
+                ];
+            }
+            empty($data) ? $data[] = ['prefix_route' => $route] : null;
+            return DataTables::of(collect($data))
+                ->addColumn('edit', function ($data){
+                    return '<a href="'.route($data['prefix_route'].'.edit', $data['id']).'" data-toggle="tooltip" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>';
+                })
+                ->addColumn('eliminar', function ($data) {
+                    return '<button class="btn btn-danger btn-delete" data-remote="'.route($data['prefix_route'].'.destroy', $data['id']).'" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash"></i></button>';
+                })
+                ->escapeColumns([3])
+                ->make(true);
+        }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view($this->route.'.'.__FUNCTION__, [
+            'title'=> $this->title,
+            'controller'=> $this->controller,
+            'route'=> $this->route,
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(ModelNameCreateRequest $request, ModelName $model)
+    {
+        $model->create($request->all());
+        $this->repo->getMessage4Method(__FUNCTION__);
+        return redirect()->back();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($model)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($model)
+    {
+        return view($this->route.'.'.__FUNCTION__, [
+            'title'=> $this->title,
+            'controller'=> $this->controller,
+            'model'=> $model,
+            'route'=> $this->route,
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ModelNameEditRequest $request, $model)
+    {
+        $model->update($request->all());
+        $this->repo->getMessage4Method(__FUNCTION__);
+        return redirect()->back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($model)
+    {
+        $model->delete();
+        $this->repo->getMessage4Method(__FUNCTION__);
+        return redirect()->back();
+    }
+}

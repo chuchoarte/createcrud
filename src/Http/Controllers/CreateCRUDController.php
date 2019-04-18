@@ -33,6 +33,7 @@ class CreateCRUDController extends Controller
     {
         $this->createView($request->view_module, $request->view_spanish_name);
         $this->createModel($request->model);
+        $this->createController($request->model, $request->model_prural, $request->view_spanish_name);
         $this->createRequest($request->requests, 'Create');
         $this->createRequest($request->requests, 'Edit');
 
@@ -61,7 +62,19 @@ class CreateCRUDController extends Controller
     {
         Artisan::call('make:model', [
             'name' => $model,
-            '--all' => true
+            '-m' => true,
+            '-f' => true
+        ]);
+    }
+
+    private function createController($model_singular, $model_prural, $spanish_name)
+    {
+        Artisan::call('make:customcontroller', [
+            'name' => ucfirst($model_singular).'Controller',
+            '-r' => true,
+            '--routeName' => strtolower($model_prural),
+            '--modelName' => ucfirst($model_singular),
+            '--titleName' => ucfirst($spanish_name),
         ]);
     }
 

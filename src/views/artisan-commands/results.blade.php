@@ -4,6 +4,16 @@
 
 @section('content')
     <div class="row">
+        @if(Session::has('message'))
+            <div class="col-lg-12">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <p>{{ Session::get('message') }}</p>
+                </div>
+            </div>
+        @endif
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div class="box box-success">
                 <div class="box-header">
@@ -16,10 +26,13 @@
                     <label for="">Rutas-web</label>
                 </div>
                 <div class="box-body">
+                    {{--
                     <div class="col-lg-12">
-                        {{"Route::any('".strtolower($plural_module_name)."/data', '".ucfirst($singular_module_name)."Controller@datatable')->name('".strtolower($plural_module_name).".datatable');"}}
+                        "Route::any('".strtolower($plural_module_name)."/datatable', '".ucfirst($singular_module_name)."Controller@datatable')->name('".strtolower($plural_module_name).".datatable');"
                     </div>
+
                     <br>
+                    --}}
                     <div class="col-lg-12">
                         {{"Route::resource('".strtolower($plural_module_name)."', '".ucfirst($singular_module_name)."Controller');"}}
                     </div>
@@ -36,7 +49,11 @@
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{$model = 'php artisan make:model '.ucfirst($singular_module_name).' -all'}}
+                        {{$model = 'php artisan make:model '.ucfirst($singular_module_name).' -m -f'}}
+                    </div>
+                    <br>
+                    <div class="col-lg-12">
+                        {{$requestEdit = 'php artisan make:customcontroller '.ucfirst($singular_module_name).'Controller -r --routeName='.strtolower($plural_module_name).' --modelName='.ucfirst($singular_module_name).' --titleName='.ucfirst($request->spanish_name)}}
                     </div>
                     <br>
                     <div class="col-lg-12">
@@ -46,12 +63,15 @@
                     <div class="col-lg-12">
                         {{$requestEdit = 'php artisan make:request '.ucfirst($singular_module_name).'EditRequest'}}
                     </div>
+                    <br>
+
                     <div class="col-lg-12">
                         {!! Field::hidden('view_module', strtolower($plural_module_name)) !!}
                         {!! Field::hidden('view_spanish_name', ucfirst($request->spanish_name)) !!}
                     </div>
                     <div class="col-lg-12">
                         {!! Field::hidden('model', ucfirst($singular_module_name)) !!}
+                        {!! Field::hidden('model_prural', strtolower($plural_module_name)) !!}
                     </div>
                     <div class="col-lg-12">
                         {!! Field::hidden('requests', ucfirst($singular_module_name)) !!}
