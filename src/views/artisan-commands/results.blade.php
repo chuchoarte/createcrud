@@ -13,7 +13,7 @@
             </div>
             <div class="box box-success">
                 <div class="box-header">
-                    <label for="">Routes-web</label>
+                    <label for="">Rutas-web</label>
                 </div>
                 <div class="box-body">
                     <div class="col-lg-12">
@@ -28,7 +28,7 @@
             <div class="box box-primary">
                 {!! Form::open(['url' => 'artisan-commands', 'method' => 'PUT']) !!}
                 <div class="box-header">
-                    Ejecutar Comandos
+                    <label for="">Ejecutar Comandos</label>
                 </div>
                 <div class="box-body">
                     <div class="col-lg-12">
