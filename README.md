@@ -8,10 +8,10 @@ agregue el Proveedor de Servicios en `config/app.php` en la sección `provider`
 ```php
 jespitia\createcrud\CreateCRUDServiceProvider::class,
 ```
-(Este paso solo es necesario si está utilizando una versión inferior a Laravel 5.5)
+`(Este paso solo es necesario si está utilizando una versión inferior a Laravel 5.5)`
 
 ## Uso
-Vaya a su app local http://myapp.test/artisan-commands
+Vaya a su app local `http://myapp.test/artisan-commands`
 
 ### Llenar los todos campos del formulario 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-1.PNG)
@@ -20,4 +20,4 @@ Vaya a su app local http://myapp.test/artisan-commands
 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-2.PNG)
 
-Puedes copiar y pegar en tu terminal o simplemente hacer clic en el botón ejecutar.
+Puedes copiar y pegar en tu terminal o simplemente hacer clic en el botón ejecutar. `(Solo aplica para comandos Artisan)`
