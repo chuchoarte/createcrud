@@ -3,7 +3,7 @@ Este paquete es de uso personal, para mis CRUD básicos en Laravel. Permite cons
 
 ## Cómo instalar en Laravel 5.x:
 Ejecutar el comando composer: `composer require jespitia/createcrud @dev`
-agregue el Proveedor de Servicios en `config/app.php` en la sección `provider`
+agregue el Proveedor de Servicios en `config/app.php` en la sección `provider`.
 ```php
 /*
 * Package Service Providers...
