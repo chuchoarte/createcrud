@@ -22,5 +22,11 @@ Vaya a la url del proyecto `http://myapp.test/artisan-commands`.
 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-2.PNG)
 
+Copiar el texto y pegar en al archivo de rutas. 
+  * Para la versión de Laravel 5.0 hasta la 5.2 `app/Http/routes.php`..
+  * Para la version de Laravel 5.3 en adelante `routes/web.php`.
+
+![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-3.PNG)
+
 Puedes copiar y pegar en el terminal (CMD) o simplemente hacer clic en el botón ejecutar. 
 `(El botón "Ejecutar" solo aplica para comandos Artisan)`.
