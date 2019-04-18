@@ -15,12 +15,20 @@ jespitia\createcrud\CreateCRUDServiceProvider::class,
 ## Uso
 Vaya a la url del proyecto `http://myapp.test/artisan-commands`.
 
-### Llenar todos los campos del formulario 
+Llenar todos los campos del formulario.
+
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-1.PNG)
 
 ### Resultados
 
+Copiar el texto y pegar en al archivo de rutas. 
+  * Para la versión de Laravel 5.0 hasta la 5.2 `app/Http/routes.php`.
+  * Para la version de Laravel 5.3 en adelante `routes/web.php`.
+  
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-2.PNG)
 
 Puedes copiar y pegar en el terminal (CMD) o simplemente hacer clic en el botón ejecutar. 
+
 `(El botón "Ejecutar" solo aplica para comandos Artisan)`.
+
+![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-3.PNG)
