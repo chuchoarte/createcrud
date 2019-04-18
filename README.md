@@ -15,7 +15,7 @@ jespitia\createcrud\CreateCRUDServiceProvider::class,
 ## Uso
 Vaya a la url del proyecto `http://myapp.test/artisan-commands`.
 
-### Llenar todos los campos del formulario 
+Llenar todos los campos del formulario 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-1.PNG)
 
 ### Resultados
