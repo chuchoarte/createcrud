@@ -11,7 +11,7 @@ jespitia\createcrud\CreateCRUDServiceProvider::class,
 `(Este paso solo es necesario si está utilizando una versión inferior a Laravel 5.5)`
 
 ## Uso
-Vaya a su app local `http://myapp.test/artisan-commands`
+Vaya a la url del proyecto `http://myapp.test/artisan-commands`
 
 ### Llenar todos los campos del formulario 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-1.PNG)
