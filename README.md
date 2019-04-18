@@ -8,6 +8,7 @@ agregue el Proveedor de Servicios en `config/app.php` en la sección `provider`
 ```php
 jespitia\createcrud\CreateCRUDServiceProvider::class,
 ```
+(Este paso solo es necesario si está utilizando una versión inferior a Laravel 5.5)
 
 ## Uso
 Vaya a su app local http://myapp.test/artisan-commands
