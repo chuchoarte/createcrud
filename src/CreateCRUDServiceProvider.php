@@ -18,7 +18,7 @@ class CreateCRUDServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/views/artisan-commands' => resource_path('views/vendor/artisan-commands'),
-            __DIR__.'/Routing' => app_path('Routing'),
+            __DIR__.'/Routing' => app_path('/Routing/'),
         ]);
 
         //$this->setupRoutes($this->app->router);
