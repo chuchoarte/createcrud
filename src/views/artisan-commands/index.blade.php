@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', $title = 'Artisan Commands')
+@section('title', $title = 'Comandos Artisan')
 
 @section('content')
     <div class="row">
@@ -22,10 +22,10 @@
                 {!! Form::open() !!}
                 <div class="box-body">
                     <div class="col-lg-3">
-                        {!! Field::text('module_name', ['placeholder' => 'Plural', 'label' => 'Nombre del Módulo (inglés)']) !!}
+                        {!! Field::text('module_name', ['placeholder' => 'Plural', 'label' => 'Nombre del Módulo (inglés)', 'required']) !!}
                     </div>
                     <div class="col-lg-3">
-                        {!! Field::text('spanish_name', ['placeholder' => 'Plural', 'label' => 'Nombre en Español']) !!}
+                        {!! Field::text('spanish_name', ['placeholder' => 'Plural', 'label' => 'Nombre en Español', 'required']) !!}
                     </div>
                 </div>
                 <div class="box-footer">
