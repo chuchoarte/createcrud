@@ -19,3 +19,5 @@ Vaya a su app local http://myapp.test/artisan-commands
 ### Resultados
 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-2.PNG)
+
+Puedes copiar y pegar en tu terminal o simplemente hacer clic en el botón ejecutar.
