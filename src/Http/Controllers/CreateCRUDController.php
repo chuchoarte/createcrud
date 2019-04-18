@@ -37,7 +37,7 @@ class CreateCRUDController extends Controller
         $this->createRequest($request->requests, 'Edit');
 
         Session::flash('message', 'Los comandos fueron ejecutados correctamente.');
-        return redirect()->route('artisan-commands::index');
+        return redirect()->route('artisan-commands.index');
     }
 
     /**
