@@ -22,10 +22,10 @@
                 {!! Form::open() !!}
                 <div class="box-body">
                     <div class="col-lg-3">
-                        {!! Field::text('module_name', ['placeholder' => 'Plural']) !!}
+                        {!! Field::text('module_name', ['placeholder' => 'Plural', 'label' => 'Nombre del Módulo (inglés)']) !!}
                     </div>
                     <div class="col-lg-3">
-                        {!! Field::text('spanish_name', ['placeholder' => 'Plural']) !!}
+                        {!! Field::text('spanish_name', ['placeholder' => 'Plural', 'label' => 'Nombre en Español']) !!}
                     </div>
                 </div>
                 <div class="box-footer">
