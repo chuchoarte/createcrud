@@ -42,7 +42,7 @@ Acto seguido agregar a la clase `app\Routing\AppResourceRegistrar.php` en el mé
 public function boot()
 {
      //...
-     $registrar = new App\Routing\AppResourceRegistrar($this->app['router']);
+     $registrar = new \App\Routing\AppResourceRegistrar($this->app['router']);
          $this->app->bind('Illuminate\Routing\ResourceRegistrar', function () use ($registrar) {
          return $registrar;
      });
