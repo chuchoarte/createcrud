@@ -34,3 +34,5 @@ Puedes copiar y pegar en el terminal (CMD) o simplemente hacer clic en el botón
 `(El botón "Ejecutar" solo aplica para comandos Artisan)`.
 
 ![alt text](https://raw.githubusercontent.com/chuchoarte/createcrud/master/src/public/img/form-3.PNG)
+
+`php artisan vendor:publish --provider='jespitia\createcrud\CreateCRUDServiceProvider'`
