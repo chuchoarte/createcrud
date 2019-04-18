@@ -5,6 +5,9 @@ Este paquete es de uso personal, para mis CRUD básicos en Laravel. Permite cons
 Ejecutar el comando composer: `composer require jespitia/createcrud @dev`
 agregue el Proveedor de Servicios en `config/app.php` en la sección `provider`
 ```php
+/*
+* Package Service Providers...
+*/
 jespitia\createcrud\CreateCRUDServiceProvider::class,
 ```
 `(Este paso solo es necesario si está utilizando una versión inferior a Laravel 5.5)`
