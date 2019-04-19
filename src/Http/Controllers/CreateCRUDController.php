@@ -59,6 +59,12 @@ class CreateCRUDController extends Controller
             '-f' => true
         ]);
     }
+
+    /**
+     * @param $model_singular
+     * @param $model_prural
+     * @param $spanish_name
+     */
     private function createController($model_singular, $model_prural, $spanish_name)
     {
         Artisan::call('make:customcontroller', [
@@ -69,14 +75,19 @@ class CreateCRUDController extends Controller
             '--titleName' => ucfirst($spanish_name),
         ]);
     }
+
     /**
-     * @param $request
+     * @param $name
      * @param $method
      */
-    private function createRequest($request, $method)
+    private function createRequest($name, $method)
     {
-        Artisan::call('make:request', ['name' => $request.$method.'Request']);
+        Artisan::call('make:request', ['name' => $name.$method.'Request']);
     }
+
+    /**
+     * @param $name
+     */
     private function createTest($name)
     {
         Artisan::call('make:test', [
