@@ -30,7 +30,6 @@
                     <div class="col-lg-12">
                         "Route::any('".strtolower($plural_module_name)."/datatable', '".ucfirst($singular_module_name)."Controller@datatable')->name('".strtolower($plural_module_name).".datatable');"
                     </div>
-
                     <br>
                     --}}
                     <div class="col-lg-12">
@@ -71,12 +70,8 @@
                     <div class="col-lg-12">
                         {!! Field::hidden('view_module', strtolower($plural_module_name)) !!}
                         {!! Field::hidden('view_spanish_name', ucfirst($request->spanish_name)) !!}
-                    </div>
-                    <div class="col-lg-12">
                         {!! Field::hidden('model', ucfirst($singular_module_name)) !!}
                         {!! Field::hidden('model_prural', strtolower($plural_module_name)) !!}
-                    </div>
-                    <div class="col-lg-12">
                         {!! Field::hidden('requests', ucfirst($singular_module_name)) !!}
                     </div>
                 </div>
