@@ -68,7 +68,6 @@
                         {{'php artisan make:test '.ucfirst($singular_module_name).'Test --phpunit'}}
                     </div>
                     <br>
-
                     <div class="col-lg-12">
                         {!! Field::hidden('view_module', strtolower($plural_module_name)) !!}
                         {!! Field::hidden('view_spanish_name', ucfirst($request->spanish_name)) !!}
