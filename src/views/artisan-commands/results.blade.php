@@ -45,23 +45,27 @@
                 </div>
                 <div class="box-body">
                     <div class="col-lg-12">
-                        {{$view = 'php artisan make:view '.strtolower($plural_module_name).' --resource --extends=adminlte::page --section="title:'.ucfirst($request->spanish_name).'" --section=content'}}
+                        {{'php artisan make:view '.strtolower($plural_module_name).' --resource --extends=adminlte::page --section="title:'.ucfirst($request->spanish_name).'" --section=content'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{$model = 'php artisan make:model '.ucfirst($singular_module_name).' -m -f'}}
+                        {{'php artisan make:model '.ucfirst($singular_module_name).' -m -f'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{$requestEdit = 'php artisan make:customcontroller '.ucfirst($singular_module_name).'Controller -r --routeName='.strtolower($plural_module_name).' --modelName='.ucfirst($singular_module_name).' --titleName='.ucfirst($request->spanish_name)}}
+                        {{'php artisan make:customcontroller '.ucfirst($singular_module_name).'Controller -r --routeName='.strtolower($plural_module_name).' --modelName='.ucfirst($singular_module_name).' --titleName='.ucfirst($request->spanish_name)}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{$requestCreate = 'php artisan make:request '.ucfirst($singular_module_name).'CreateRequest'}}
+                        {{'php artisan make:request '.ucfirst($singular_module_name).'CreateRequest'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{$requestEdit = 'php artisan make:request '.ucfirst($singular_module_name).'EditRequest'}}
+                        {{'php artisan make:request '.ucfirst($singular_module_name).'EditRequest'}}
+                    </div>
+                    <br>
+                    <div class="col-lg-12">
+                        {{'php artisan make:test '.ucfirst($singular_module_name).'Test --phpunit'}}
                     </div>
                     <br>
 
