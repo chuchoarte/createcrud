@@ -1,19 +1,15 @@
 <?php
-
 namespace jespitia\createcrud\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
-
 class CreateCRUDController extends Controller
 {
     public function index()
     {
         return view('artisan-commands::index');
     }
-
     public function create(Request $request)
     {
         $singular_module_name = substr($request->module_name, null, -1);
@@ -24,7 +20,6 @@ class CreateCRUDController extends Controller
             'plural_module_name' => $plural_module_name
         ]);
     }
-
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
@@ -36,11 +31,10 @@ class CreateCRUDController extends Controller
         $this->createController($request->model, $request->model_prural, $request->view_spanish_name);
         $this->createRequest($request->requests, 'Create');
         $this->createRequest($request->requests, 'Edit');
-
+        $this->createTest($request->requests);
         Session::flash('message', 'Los comandos fueron ejecutados correctamente.');
         return redirect()->route('artisan-commands.index');
     }
-
     /**
      * @param $view_module
      * @param $view_spanish_name
@@ -54,7 +48,6 @@ class CreateCRUDController extends Controller
             '--section' => ['title:'.$view_spanish_name, 'content_header', 'content'],
         ]);
     }
-
     /**
      * @param $model
      */
@@ -66,7 +59,6 @@ class CreateCRUDController extends Controller
             '-f' => true
         ]);
     }
-
     private function createController($model_singular, $model_prural, $spanish_name)
     {
         Artisan::call('make:customcontroller', [
@@ -77,7 +69,6 @@ class CreateCRUDController extends Controller
             '--titleName' => ucfirst($spanish_name),
         ]);
     }
-
     /**
      * @param $request
      * @param $method
@@ -85,5 +76,12 @@ class CreateCRUDController extends Controller
     private function createRequest($request, $method)
     {
         Artisan::call('make:request', ['name' => $request.$method.'Request']);
+    }
+    private function createTest($name)
+    {
+        Artisan::call('make:test', [
+            'name' => $name."Test",
+            '--unit' => true,
+        ]);
     }
 }
