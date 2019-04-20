@@ -68,7 +68,7 @@
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:seed '.ucfirst($singular_name).'TableSeeder'}}
+                        {{'php artisan make:seeder '.ucfirst($singular_name).'TableSeeder'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
