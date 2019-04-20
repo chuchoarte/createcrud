@@ -76,7 +76,7 @@ class CreateCRUDController extends Controller
             'name' => ucfirst($singular_name).'Controller',
             '-r' => true,
             '--routeName' => strtolower($plural_name),
-            '--modelName' => ucfirst($model_singular),
+            '--modelName' => ucfirst($singular_name),
             '--titleName' => ucfirst($prural_spanish),
         ]);
     }
