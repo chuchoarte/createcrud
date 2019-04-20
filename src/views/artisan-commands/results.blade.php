@@ -64,7 +64,7 @@
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:test '.ucfirst($singular_name).'Test --phpunit'}}
+                        {{'php artisan make:test '.ucfirst($singular_name).'Test'}}
                     </div>
                     <br>
                     <div class="col-lg-12">

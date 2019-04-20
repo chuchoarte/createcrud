@@ -97,8 +97,7 @@ class CreateCRUDController extends Controller
     private function createTest($singular_name)
     {
         Artisan::call('make:test', [
-            'name' => ucfirst($singular_name)."Test",
-            '--unit' => true,
+            'name' => ucfirst($singular_name)."Test"
         ]);
     }
 
