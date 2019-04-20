@@ -28,7 +28,7 @@ class CreateCRUDController extends Controller
         $plural_name = $request->plural_name;
         $singular_name = str_singular($request->plural_name);
         $prural_spanish = $request->spanish_name;
-        $singular_spanish = substr($request->spanish_name, null, -1);
+        //$singular_spanish = substr($request->spanish_name, null, -1);
 
         $this->createView($plural_name, $prural_spanish);
         $this->createModel($singular_name);
