@@ -32,6 +32,7 @@ class CreateCRUDController extends Controller
 
         $this->createView($plural_name, $prural_spanish);
         $this->createModel($singular_name);
+        $this->createSeed($singular_name);
         $this->createController($singular_name, $plural_name, $prural_spanish);
         $this->createRequest($singular_name, 'Create');
         $this->createRequest($singular_name, 'Edit');
@@ -98,6 +99,16 @@ class CreateCRUDController extends Controller
         Artisan::call('make:test', [
             'name' => ucfirst($singular_name)."Test",
             '--unit' => true,
+        ]);
+    }
+
+    /**
+     * @param string $singular_name
+     */
+    private function createSeed($singular_name)
+    {
+        Artisan::call('make:seed', [
+            'name' => ucfirst($singular_name)."TableSeeder",
         ]);
     }
 }

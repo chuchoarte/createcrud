@@ -68,6 +68,10 @@
                     </div>
                     <br>
                     <div class="col-lg-12">
+                        {{'php artisan make:seed '.ucfirst($singular_name).'TableSeeder'}}
+                    </div>
+                    <br>
+                    <div class="col-lg-12">
                         {!! Field::hidden('plural_name', $plural_name) !!}
                         {!! Field::hidden('spanish_name', $spanish_name) !!}
                     </div>
