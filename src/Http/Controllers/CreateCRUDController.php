@@ -106,7 +106,7 @@ class CreateCRUDController extends Controller
      */
     private function createSeed($singular_name)
     {
-        Artisan::call('make:seed', [
+        Artisan::call('make:seeder', [
             'name' => ucfirst($singular_name)."TableSeeder",
         ]);
     }
