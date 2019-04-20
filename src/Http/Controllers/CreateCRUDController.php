@@ -12,12 +12,10 @@ class CreateCRUDController extends Controller
     }
     public function create(Request $request)
     {
-        $singular_module_name = substr($request->module_name, null, -1);
-        $plural_module_name = $request->module_name;
         return view('artisan-commands::results', [
-            'request' => $request,
-            'singular_module_name' => $singular_module_name,
-            'plural_module_name' => $plural_module_name
+            'singular_name' => str_singular($request->module_name),
+            'plural_name' => $request->module_name,
+            'spanish_name' => $request->spanish_name
         ]);
     }
     /**
@@ -26,12 +24,19 @@ class CreateCRUDController extends Controller
      */
     public function store(Request $request)
     {
-        $this->createView($request->view_module, $request->view_spanish_name);
-        $this->createModel($request->model);
-        $this->createController($request->model, $request->model_prural, $request->view_spanish_name);
-        $this->createRequest($request->requests, 'Create');
-        $this->createRequest($request->requests, 'Edit');
-        $this->createTest($request->requests);
+
+        $plural_name = $request->plural_name;
+        $singular_name = str_singular($request->plural_name);
+        $prural_spanish = $request->spanish_name;
+        $singular_spanish = substr($request->spanish_name, null, -1);
+
+        $this->createView($plural_name, $prural_spanish);
+        $this->createModel($singular_name);
+        $this->createController($singular_name, $plural_name, $prural_spanish);
+        $this->createRequest($singular_name, 'Create');
+        $this->createRequest($singular_name, 'Edit');
+        $this->createTest($singular_name);
+
         Session::flash('message', 'Los comandos fueron ejecutados correctamente.');
         return redirect()->route('artisan-commands.index');
     }
@@ -39,22 +44,22 @@ class CreateCRUDController extends Controller
      * @param $view_module
      * @param $view_spanish_name
      */
-    private function createView($view_module, $view_spanish_name)
+    private function createView($plural_name, $prural_spanish)
     {
         Artisan::call('make:view', [
-            'name' => $view_module,
+            'name' => strtolower($plural_name),
             '--resource' => true,
             '--extends' => 'adminlte::page',
-            '--section' => ['title:'.$view_spanish_name, 'content_header', 'content'],
+            '--section' => ['title:'.ucfirst($prural_spanish), 'content_header', 'content'],
         ]);
     }
     /**
      * @param $model
      */
-    private function createModel($model)
+    private function createModel($singular_name)
     {
         Artisan::call('make:model', [
-            'name' => $model,
+            'name' => ucfirst($singular_name),
             '-m' => true,
             '-f' => true
         ]);
@@ -65,14 +70,14 @@ class CreateCRUDController extends Controller
      * @param $model_prural
      * @param $spanish_name
      */
-    private function createController($model_singular, $model_prural, $spanish_name)
+    private function createController($singular_name, $plural_name, $prural_spanish)
     {
         Artisan::call('make:customcontroller', [
-            'name' => ucfirst($model_singular).'Controller',
+            'name' => ucfirst($singular_name).'Controller',
             '-r' => true,
-            '--routeName' => strtolower($model_prural),
+            '--routeName' => strtolower($plural_name),
             '--modelName' => ucfirst($model_singular),
-            '--titleName' => ucfirst($spanish_name),
+            '--titleName' => ucfirst($prural_spanish),
         ]);
     }
 
@@ -80,18 +85,18 @@ class CreateCRUDController extends Controller
      * @param $name
      * @param $method
      */
-    private function createRequest($name, $method)
+    private function createRequest($plural_name, $method)
     {
-        Artisan::call('make:request', ['name' => $name.$method.'Request']);
+        Artisan::call('make:request', ['name' => ucfirst($plural_name).$method.'Request']);
     }
 
     /**
      * @param $name
      */
-    private function createTest($name)
+    private function createTest($singular_name)
     {
         Artisan::call('make:test', [
-            'name' => $name."Test",
+            'name' => ucfirst($singular_name)."Test",
             '--unit' => true,
         ]);
     }

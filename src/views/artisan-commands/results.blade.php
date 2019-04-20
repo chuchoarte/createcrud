@@ -28,12 +28,12 @@
                 <div class="box-body">
                     {{--
                     <div class="col-lg-12">
-                        "Route::any('".strtolower($plural_module_name)."/datatable', '".ucfirst($singular_module_name)."Controller@datatable')->name('".strtolower($plural_module_name).".datatable');"
+                        "Route::any('".strtolower($plural_name)."/datatable', '".ucfirst($singular_name)."Controller@datatable')->name('".strtolower($plural_name).".datatable');"
                     </div>
                     <br>
                     --}}
                     <div class="col-lg-12">
-                        {{"Route::resource('".strtolower($plural_module_name)."', '".ucfirst($singular_module_name)."Controller');"}}
+                        {{"Route::resource('".strtolower($plural_name)."', '".ucfirst($singular_name)."Controller');"}}
                     </div>
                 </div>
             </div>
@@ -44,35 +44,32 @@
                 </div>
                 <div class="box-body">
                     <div class="col-lg-12">
-                        {{'php artisan make:view '.strtolower($plural_module_name).' --resource --extends=adminlte::page --section="title:'.ucfirst($request->spanish_name).'" --section=content'}}
+                        {{'php artisan make:view '.strtolower($plural_name).' --resource --extends=adminlte::page --section="title:'.ucfirst($spanish_name).'" --section=content'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:model '.ucfirst($singular_module_name).' -m -f'}}
+                        {{'php artisan make:model '.ucfirst($singular_name).' -m -f'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:customcontroller '.ucfirst($singular_module_name).'Controller -r --routeName='.strtolower($plural_module_name).' --modelName='.ucfirst($singular_module_name).' --titleName='.ucfirst($request->spanish_name)}}
+                        {{'php artisan make:customcontroller '.ucfirst($singular_name).'Controller -r --routeName='.strtolower($plural_name).' --modelName='.ucfirst($singular_name).' --titleName='.ucfirst($spanish_name)}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:request '.ucfirst($singular_module_name).'CreateRequest'}}
+                        {{'php artisan make:request '.ucfirst($singular_name).'CreateRequest'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:request '.ucfirst($singular_module_name).'EditRequest'}}
+                        {{'php artisan make:request '.ucfirst($singular_name).'EditRequest'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {{'php artisan make:test '.ucfirst($singular_module_name).'Test --phpunit'}}
+                        {{'php artisan make:test '.ucfirst($singular_name).'Test --phpunit'}}
                     </div>
                     <br>
                     <div class="col-lg-12">
-                        {!! Field::hidden('view_module', strtolower($plural_module_name)) !!}
-                        {!! Field::hidden('view_spanish_name', ucfirst($request->spanish_name)) !!}
-                        {!! Field::hidden('model', ucfirst($singular_module_name)) !!}
-                        {!! Field::hidden('model_prural', strtolower($plural_module_name)) !!}
-                        {!! Field::hidden('requests', ucfirst($singular_module_name)) !!}
+                        {!! Field::hidden('plural_name', $plural_name) !!}
+                        {!! Field::hidden('spanish_name', $spanish_name) !!}
                     </div>
                 </div>
                 <div class="box-footer">
