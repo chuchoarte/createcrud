@@ -26,12 +26,10 @@
                     <label for="">Rutas-web</label>
                 </div>
                 <div class="box-body">
-                    {{--
                     <div class="col-lg-12">
-                        "Route::any('".strtolower($plural_name)."/datatable', '".ucfirst($singular_name)."Controller@datatable')->name('".strtolower($plural_name).".datatable');"
+                        {{"Route::any('".strtolower($plural_name)."/datatable', '".ucfirst($singular_name)."Controller@datatable')->name('".strtolower($plural_name).".datatable');"}}
                     </div>
                     <br>
-                    --}}
                     <div class="col-lg-12">
                         {{"Route::resource('".strtolower($plural_name)."', '".ucfirst($singular_name)."Controller');"}}
                     </div>

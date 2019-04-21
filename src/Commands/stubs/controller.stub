@@ -41,31 +41,31 @@ class DummyClass extends Controller
     * @throws \Exception
     */
     public function datatable()
+    {
+        if (count($this->model->all()) <= 0)
         {
-            if (count($this->model->all()) <= 0)
-            {
-                return [];
-            }else{}
-            $route = $this->routeT;
-            foreach ($this->model->all() as $item) {
-                $data[] = [
-                    'prefix_route' => $route,
-                    //Fill with elements
-                    'id'                => $item->id,
+            return [];
+        }else{}
+        $route = $this->route;
+        foreach ($this->model->all() as $item) {
+            $data[] = [
+                'prefix_route' => $route,
+                //Fill with elements
+                'id'                => $item->id,
 
-                ];
-            }
-            empty($data) ? $data[] = ['prefix_route' => $route] : null;
-            return DataTables::of(collect($data))
-                ->addColumn('edit', function ($data){
-                    return '<a href="'.route($data['prefix_route'].'.edit', $data['id']).'" data-toggle="tooltip" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>';
-                })
-                ->addColumn('eliminar', function ($data) {
-                    return '<button class="btn btn-danger btn-delete" data-remote="'.route($data['prefix_route'].'.destroy', $data['id']).'" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash"></i></button>';
-                })
-                ->escapeColumns([3])
-                ->make(true);
+            ];
         }
+        empty($data) ? $data[] = ['prefix_route' => $route] : null;
+        return DataTables::of(collect($data))
+            ->addColumn('edit', function ($data){
+                return '<a href="'.route($data['prefix_route'].'.edit', $data['id']).'" data-toggle="tooltip" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>';
+            })
+            ->addColumn('eliminar', function ($data) {
+                return '<button class="btn btn-danger btn-delete" data-remote="'.route($data['prefix_route'].'.destroy', $data['id']).'" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash"></i></button>';
+            })
+            ->escapeColumns([3])
+            ->make(true);
+    }
 
     /**
      * Show the form for creating a new resource.
