@@ -144,7 +144,6 @@ class DummyClass extends Controller
     public function destroy($model)
     {
         $model->delete();
-        $this->repo->getMessage4Method(__FUNCTION__);
-        return redirect()->back();
+        return response()->json(['success' => 'El registro fue eliminado exitosamente.']);
     }
 }
